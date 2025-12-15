@@ -11,41 +11,41 @@ const CryptoCard = ({ coin }: { coin: Coin }) => {
   return (
     <div
       className="
-        bg-white rounded-lg px-3 py-2
-        border border-gray-100
-        shadow-sm
-        transition-colors duration-200
-        hover:bg-yellow-50
+        bg-white
+        rounded-xl p-4
+        border border-gray-200
       "
     >
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img src={coin.iconUrl} className="w-5 h-5" alt={coin.name} />
-          <span className="text-sm font-medium text-gray-900">
-            {coin.symbol}
-          </span>
+        <div className="flex items-center gap-3">
+          <img
+            src={coin.iconUrl}
+            alt={coin.name}
+            className="w-8 h-8 rounded-full"
+          />
+          <div className="flex flex-col">
+            <span className="text-gray-900 font-semibold">{coin.name}</span>
+            <span className="text-gray-500 text-sm">{coin.symbol}</span>
+          </div>
         </div>
 
-        <span
-          className={`
-            flex items-center gap-0.5 text-xs font-medium
-            ${isPositive ? "text-green-600" : "text-red-600"}
-          `}
+        <div
+          className={`flex items-center gap-1 text-sm font-semibold ${
+            isPositive ? "text-green-600" : "text-red-600"
+          }`}
         >
           {isPositive ? (
-            <ArrowTrendingUpIcon className="w-3.5 h-3.5" />
+            <ArrowTrendingUpIcon className="w-4 h-4" />
           ) : (
-            <ArrowTrendingDownIcon className="w-3.5 h-3.5" />
+            <ArrowTrendingDownIcon className="w-4 h-4" />
           )}
           {isPositive && "+"}
           {change.toFixed(2)}%
-        </span>
+        </div>
       </div>
 
-      <div className="mt-1">
-        <span className="text-sm font-semibold text-gray-800">
-          ${Number(coin.price).toFixed(2)}
-        </span>
+      <div className="mt-3 text-lg font-bold text-gray-900">
+        ${Number(coin.price).toLocaleString()}
       </div>
     </div>
   );

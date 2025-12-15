@@ -1,7 +1,4 @@
-interface StatsCardProps {
-  title: string;
-  value: string | number;
-}
+import type { StatsCardProps } from "../types/statscard";
 
 const StatsCard = ({ title, value }: StatsCardProps) => {
   return (
@@ -23,6 +20,8 @@ const StatsCard = ({ title, value }: StatsCardProps) => {
         flex-col
         items-center
         text-center
+        mb-8
+        mt-8
       "
     >
       <h3 className="text-gray-500 text-sm mb-2">{title}</h3>
