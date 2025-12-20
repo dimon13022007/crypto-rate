@@ -5,6 +5,8 @@ Users can view current prices, 24h changes, market capitalization, 24h trading v
 
 ---
 
+🔗 **Live Demo:** https://crypto-rate-xi.vercel.app/
+
 ## Technologies Used
 
 - **React** — for building the user interface
