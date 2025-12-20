@@ -1,5 +1,18 @@
 import axios from "axios";
+import type { Coin } from "../types/coin";
 import type { StatsType } from "../types/stats";
+
+interface CoinsResponse {
+  data: {
+    coins: Coin[];
+  };
+}
+
+interface StatsResponse {
+  data: StatsType;
+}
+
+const USDT_UUID = "yhjMzLPhuIDl";
 
 export const api = axios.create({
   baseURL: "https://coinranking1.p.rapidapi.com",
@@ -10,27 +23,19 @@ export const api = axios.create({
 });
 
 export const getCoins = async () => {
-  const response = await api.get("/coins", {
+  const response = await api.get<CoinsResponse>("/coins", {
     params: {
-      referenceCurrencyUuid: "yhjMzLPhuIDl",
+      referenceCurrencyUuid: USDT_UUID,
       orderBy: "marketCap",
       orderDirection: "desc",
       limit: 10,
     },
   });
+
   return response.data.data.coins;
 };
 
-export const getStats = async (): Promise<StatsType> => {
-  const response = await api.get("/stats");
-  const data = response.data.data;
-
-  return {
-    totalMarketCap: data.totalMarketCap,
-    total24hVolume: data.total24hVolume,
-    btcDominance: data.btcDominance,
-    ethDominance: data.ethDominance,
-    totalExchanges: data.totalExchanges,
-    totalCoins: data.totalCoins,
-  };
+export const getStats = async () => {
+  const response = await api.get<StatsResponse>("/stats");
+  return response.data.data;
 };

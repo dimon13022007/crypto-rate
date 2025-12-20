@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCoins } from "../api/coinranking";
-import type { Coin } from "../types/coin";
 import CryptoCard from "./CryptoCard";
 import SearchBar from "./SearchBar";
 import { useState, useMemo } from "react";
@@ -12,10 +11,9 @@ const CryptoList = () => {
     data: coins,
     isLoading,
     error,
-  } = useQuery<Coin[]>({
+  } = useQuery({
     queryKey: ["coins"],
     queryFn: getCoins,
-    staleTime: 10000,
   });
 
   const filteredCoins = useMemo(() => {

@@ -9,13 +9,7 @@ const CryptoCard = ({ coin }: { coin: Coin }) => {
   const isPositive = change >= 0;
 
   return (
-    <div
-      className="
-        bg-white
-        rounded-xl p-4
-        border border-gray-200
-      "
-    >
+    <div className=" bg-whiterounded-xl p-4 border border-gray-200">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <img

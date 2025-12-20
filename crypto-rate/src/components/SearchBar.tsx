@@ -12,19 +12,7 @@ const SearchBar = ({ value, onChange }: SearchBarProps) => {
           placeholder="Search coin..."
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="
-            w-full
-            pl-10
-            pr-4
-            py-3
-            rounded-xl
-            border border-gray-300
-            bg-white
-            shadow-sm
-            focus:outline-none
-            focus:ring-2 focus:ring-yellow-300
-            focus:border-yellow-300
-          "
+          className=" w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 "
         />
       </div>
     </div>

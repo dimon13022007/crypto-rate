@@ -1,4 +1,4 @@
-export const formatNumber = (num: number | string) => {
+export const formatCurrency = (num: number | string) => {
   const number = typeof num === "string" ? parseFloat(num) : num;
 
   if (number >= 1_000_000_000_000)

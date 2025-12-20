@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# Crypto Rate React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time cryptocurrency tracking application.  
+Users can view current prices, 24h changes, market capitalization, 24h trading volume, and BTC/ETH dominance. It also includes a search for coins and the ability to view charts for selected cryptocurrencies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## React Compiler
+- **React** — for building the user interface
+- **TypeScript** — adds strong typing to the code
+- **Vite** — modern build and development tool
+- **Tailwind CSS** — for fast and responsive styling
+- **React Query (@tanstack/react-query)** — for managing API requests and caching
+- **Axios** — for making HTTP requests
+- **Heroicons** — modern SVG icon set
+- **Coinranking API** — source of cryptocurrency data
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Component Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Header** — site header with title and basic info
+- **Stats / StatsCard** — market statistics block
+- **CryptoList / CryptoCard** — list of cryptocurrencies with price, change, and icons
+- **SearchBar** — cryptocurrency search input
+- **CoinChart** — chart for the selected cryptocurrency
+- **App / Home** — root component and main page
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Real-time data updates using React Query
+- Responsive design for all devices
+- Search and filter cryptocurrencies
+- Beautiful icons and price change visualization
+- Large numbers formatted for readability (trillions, billions, millions)
