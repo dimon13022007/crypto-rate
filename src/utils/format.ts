@@ -6,5 +6,16 @@ export const formatCurrency = (num: number | string) => {
   if (number >= 1_000_000_000) return (number / 1_000_000_000).toFixed(2) + "B";
   if (number >= 1_000_000) return (number / 1_000_000).toFixed(2) + "M";
   if (number >= 1_000) return (number / 1_000).toFixed(2) + "K";
-  return number.toString();
+
+  if (number >= 1) {
+    return number.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  }
+
+  return number.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 6,
+  });
 };
