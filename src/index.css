@@ -1,1 +1,206 @@
 @import "tailwindcss";
+
+* {
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+html {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+body {
+  background-color: #ffffff;
+  color: #111827;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: inherit;
+  color: inherit;
+}
+
+html:not(.dark) main[class*="bg-gray-50"] {
+  background-color: #f9fafb;
+}
+
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html:not(.dark) header h1,
+html:not(.dark) header h2,
+html:not(.dark) header [class*="text-black"],
+html:not(.dark) header [class*="text-gray-900"] {
+  color: #111827 !important;
+}
+
+html:not(.dark) header [class*="text-gray-600"] {
+  color: #6b7280 !important;
+}
+
+html:not(.dark) header [class*="text-gray-800"] {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) [class*="bg-white"]:not([class*="dark"]) {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) button[class*="bg-white"],
+html:not(.dark) div[class*="bg-white"],
+html:not(.dark) [class*="rounded-xl"][class*="bg-white"] {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+html:not(.dark) [class*="rounded-xl"][class*="shadow-sm"] {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) [class*="rounded-xl"][class*="shadow-lg"] {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) [class*="bg-gray-50"]:not([class*="dark"]) {
+  background-color: #f9fafb;
+}
+
+html:not(.dark) [class*="bg-gray-100"]:not([class*="dark"]) {
+  background-color: #f3f4f6;
+}
+
+html:not(.dark) [class*="bg-gray-200"]:not([class*="dark"]) {
+  background-color: #e5e7eb;
+}
+
+html:not(.dark) [class*="text-black"]:not([class*="dark"]),
+html:not(.dark) [class*="text-gray-900"]:not([class*="dark"]) {
+  color: #111827 !important;
+}
+
+html:not(.dark) button[class*="rounded-xl"] span[class*="text-gray-900"],
+html:not(.dark) button[class*="rounded-xl"] [class*="text-gray-900"],
+html:not(.dark) button[class*="bg-white"] span[class*="text-gray-900"],
+html:not(.dark) button[class*="bg-white"] [class*="text-gray-900"] {
+  color: #111827 !important;
+}
+
+html:not(.dark) button[class*="rounded-xl"] span[class*="text-gray-500"],
+html:not(.dark) button[class*="bg-white"] span[class*="text-gray-500"] {
+  color: #6b7280 !important;
+}
+
+html:not(.dark) div[class*="rounded-xl"] span[class*="text-gray-900"],
+html:not(.dark) div[class*="rounded-xl"] [class*="text-gray-900"],
+html:not(.dark) div[class*="bg-white"] span[class*="text-gray-900"],
+html:not(.dark) div[class*="bg-white"] [class*="text-gray-900"] {
+  color: #111827 !important;
+}
+
+html:not(.dark) [class*="text-gray-800"]:not([class*="dark"]) {
+  color: #1f2937;
+}
+
+html:not(.dark) [class*="text-gray-700"]:not([class*="dark"]) {
+  color: #374151;
+}
+
+html:not(.dark) [class*="text-gray-600"]:not([class*="dark"]) {
+  color: #4b5563;
+}
+
+html:not(.dark) [class*="text-gray-500"]:not([class*="dark"]) {
+  color: #6b7280;
+}
+
+html:not(.dark) [class*="text-gray-400"]:not([class*="dark"]) {
+  color: #9ca3af;
+}
+
+html:not(.dark) [class*="border-gray-200"]:not([class*="dark"]) {
+  border-color: #e5e7eb;
+}
+
+html:not(.dark) [class*="border-gray-300"]:not([class*="dark"]) {
+  border-color: #d1d5db;
+}
+
+html:not(.dark) input[class*="bg-white"] {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+html:not(.dark) input[class*="text-gray-900"] {
+  color: #111827 !important;
+}
+
+html:not(.dark) input::placeholder {
+  color: #9ca3af !important;
+}
+
+html:not(.dark) button[class*="bg-gray-200"] {
+  background-color: #e5e7eb !important;
+}
+
+html:not(.dark) button[class*="bg-gray-200"]:hover {
+  background-color: #d1d5db !important;
+}
+
+html.dark {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+html.dark body {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+html.dark .recharts-cartesian-grid line,
+html.dark .recharts-cartesian-grid-horizontal line,
+html.dark .recharts-cartesian-grid-vertical line {
+  stroke: #374151 !important;
+}
+
+html.dark .recharts-cartesian-axis-line,
+html.dark .recharts-cartesian-axis line {
+  stroke: #4b5563 !important;
+}
+
+html.dark .recharts-cartesian-axis-tick-line,
+html.dark .recharts-cartesian-axis-tick line {
+  stroke: #4b5563 !important;
+}
+
+html.dark .recharts-text,
+html.dark .recharts-cartesian-axis-tick-value text,
+html.dark .recharts-cartesian-axis text {
+  fill: #9ca3af !important;
+}
+
+html.dark .recharts-tooltip-wrapper {
+  background-color: rgba(31, 41, 55, 0.95) !important;
+  border: 1px solid #4b5563 !important;
+  border-radius: 0.5rem !important;
+}
+
+html.dark .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: rgba(31, 41, 55, 0.95) !important;
+  border: 1px solid #4b5563 !important;
+  color: #f3f4f6 !important;
+}
+
+html.dark svg.recharts-surface line[stroke="#ccc"],
+html.dark svg.recharts-surface line[stroke="#666"] {
+  stroke: #4b5563 !important;
+}
+
+html.dark svg.recharts-surface text[fill="#666"] {
+  fill: #9ca3af !important;
+}

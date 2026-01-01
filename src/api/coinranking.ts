@@ -39,3 +39,28 @@ export const getStats = async () => {
   const response = await api.get<StatsResponse>("/stats");
   return response.data.data;
 };
+
+interface CoinHistoryResponse {
+  data: {
+    history: Array<{
+      price: string;
+      timestamp: number;
+    }>;
+  };
+}
+
+export const getCoinHistory = async (
+  coinUuid: string,
+  timePeriod: string = "24h"
+) => {
+  const response = await api.get<CoinHistoryResponse>(
+    `/coin/${coinUuid}/history`,
+    {
+      params: {
+        referenceCurrencyUuid: USDT_UUID,
+        timePeriod,
+      },
+    }
+  );
+  return response.data.data.history;
+};
